@@ -26,6 +26,8 @@ node {
    
    stage('Deployment') {
        try {
+			sh 'chown jenkins:jenkins /var/lib/jenkins/workspace/ms-eureka2/runDeployment.sh'
+			sh 'chmod +x /var/lib/jenkins/workspace/ms-eureka2/runDeployment.sh'
            sh '/var/lib/jenkins/workspace/ms-eureka2/runDeployment.sh'
        }catch (e){
            notifyStarted ("Deployment failed in Jenkins")
