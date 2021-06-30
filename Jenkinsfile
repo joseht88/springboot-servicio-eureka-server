@@ -26,7 +26,7 @@ node {
    
    stage('Deployment') {
        try {
-           sh '/var/lib/jenkins/workspace/springboot-servicio-eureka-server/runDeployment.sh'
+           sh '/var/lib/jenkins/workspace/ms-eureka2/runDeployment.sh'
        }catch (e){
            notifyStarted ("Deployment failed in Jenkins")
            throw e
