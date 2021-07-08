@@ -5,7 +5,7 @@ versionid=`echo $packageName | awk -F "-" '{print $2}'`
 versionName=`echo $packageName | awk -F "-" '{print $3}' | awk -F "." '{print $1}'`
 version=`echo $versionid-$versionName`
 dockerImageName=eureka
-dockerpid=`docker ps -a | grep $dockerImageName | grep "Up" | awk -F " " '{print $1}'`
+sudo dockerpid=`docker ps -a | grep $dockerImageName | grep "Up" | awk -F " " '{print $1}'`
 if [[ $dockerpid != "" ]];then
       docker stop $dockerpid
       docker rm $dockerpid
