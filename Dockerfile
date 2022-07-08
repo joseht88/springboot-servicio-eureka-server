@@ -1,4 +1,4 @@
-FROM adoptopenjdk/openjdk11:alpine-slim
+FROM adoptopenjdk/openjdk17:alpine-slim
 RUN apk add -U tzdata
 ENV TZ America/Lima
 RUN ln -snf /usr/share/zoneinfo/${TZ} /etc/localtime
