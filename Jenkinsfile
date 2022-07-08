@@ -10,7 +10,7 @@ node {
        try {
            sh "'${mvnHome}/bin/mvn' clean package -DskipTests"
        }catch (e){
-           notifyStarted ("Build failed in Jenkins")
+        //   notifyStarted ("Build failed in Jenkins")
            throw e
        }
    }
@@ -19,7 +19,7 @@ node {
        try {
            archive 'target/*.jar'
        }catch (e){
-           notifyStarted ("packaging failed in Jenkins")
+        //   notifyStarted ("packaging failed in Jenkins")
            throw e
        }
    }
@@ -30,7 +30,7 @@ node {
 			sh 'chmod +x /var/lib/jenkins/workspace/springboot-servicio-eureka-server/runDeployment.sh'
            sh '/var/lib/jenkins/workspace/springboot-servicio-eureka-server/runDeployment.sh'
        }catch (e){
-           notifyStarted ("Deployment failed in Jenkins")
+       //    notifyStarted ("Deployment failed in Jenkins")
            throw e
        }
    }
