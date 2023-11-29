@@ -28,7 +28,7 @@ node {
        try {
 			sh 'chown jenkins:jenkins /var/jenkins_home/workspace/springboot-servicio-eureka-server/runDeployment.sh'
 			sh 'chmod +x /var/jenkins_home/workspace/springboot-servicio-eureka-server/runDeployment.sh'
-           sh '/var/jenkins_home/workspace_home/springboot-servicio-eureka-server/runDeployment.sh'
+           sh '/var/jenkins_home/workspace/springboot-servicio-eureka-server/runDeployment.sh'
        }catch (e){
            notifyStarted ("Deployment failed in Jenkins")
            throw e
