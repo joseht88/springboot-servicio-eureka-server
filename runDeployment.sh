@@ -10,7 +10,7 @@ if [[ $dockerpid != "" ]];then
       docker stop $dockerpid
       docker rm $dockerpid
 fi
-docker build -t $dockerImageName:v1 .
+docker build --tag $dockerImageName:v1 .
 docker run -d -p 8761:8761 --name $dockerImageName --network backend $dockerImageName:v1
 dockerImageId=`docker images | grep $dockerImageName | grep v1 | awk -F " " '{print $3}'`
 docker tag $dockerImageId $dockerImageName:v1
