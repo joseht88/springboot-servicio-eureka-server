@@ -26,9 +26,9 @@ node {
    
    stage('Deployment') {
        try {
-			sh 'chown jenkins:jenkins /var/lib/jenkins_home/workspace/springboot-servicio-eureka-server/runDeployment.sh'
-			sh 'chmod +x /var/lib/jenkins_home/workspace/springboot-servicio-eureka-server/runDeployment.sh'
-           sh '/var/lib/jenkins/workspace_home/springboot-servicio-eureka-server/runDeployment.sh'
+			sh 'chown jenkins:jenkins /var/jenkins_home/workspace/springboot-servicio-eureka-server/runDeployment.sh'
+			sh 'chmod +x /var/jenkins_home/workspace/springboot-servicio-eureka-server/runDeployment.sh'
+           sh '/var/jenkins/workspace_home/springboot-servicio-eureka-server/runDeployment.sh'
        }catch (e){
            notifyStarted ("Deployment failed in Jenkins")
            throw e
